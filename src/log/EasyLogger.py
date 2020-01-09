@@ -181,6 +181,7 @@ def add_filehandler(level, fmt, filename , mode, backup_count, limit, when):
     return add_handler(cls, level, fmt, False, **kwargs)
 
 
+# 注:多次设置会添加多个日志handler
 def set_log(filename=None, mode='a', level='DEBUG:INFO',
                fmt='[%(asctime)s][%(levelname)s][%(filename)s %(funcName)s %(lineno)d]: %(message)s',
                backup_count=5, limit=20480, when=None):
@@ -198,8 +199,8 @@ def set_log(filename=None, mode='a', level='DEBUG:INFO',
 
     # 有文件路径时日志才写文件
     if filename:
-
-        logdir = '/'.join(filename.split('/')[:-1])
+        #  logdir = '/'.join(filename.split('/')[:-1])
+        logdir, _ = os.path.split(filename)
         # 创建文件夹
         if os.path.isfile(logdir) or not os.path.exists(logdir): 
             os.mkdir(logdir)
@@ -217,9 +218,10 @@ elog = logging.getLogger()
 elog.setLevel(logging.DEBUG)
 
 # 基本设置
-set_log()
+#  set_log()
 
 def _test():
+    set_log(filename="./log/log.log")
     elog.debug('hello, world')
     elog.info('hello, world')
     elog.error('hello, world')
