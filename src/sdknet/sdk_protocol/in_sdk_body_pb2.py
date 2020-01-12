@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='insider.sdk',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11in_sdk_body.proto\x12\x0binsider.sdk\x1a\x16in_sdk_body_user.proto\"\x18\n\x07\x43ontent\x12\r\n\x05magic\x18\x01 \x01(\x03\"\x99\x01\n\x04\x42ody\x12\x31\n\x0cuser_session\x18\x01 \x01(\x0b\x32\x1b.insider.sdk.UserSessionMsg\x12\x0b\n\x03url\x18\x02 \x01(\t\x12*\n\x06method\x18\x03 \x01(\x0e\x32\x1a.insider.sdk.OperationType\x12%\n\x07\x63ontent\x18\x05 \x01(\x0b\x32\x14.insider.sdk.Content*7\n\rOperationType\x12\x07\n\x03GET\x10\x00\x12\x08\n\x04POST\x10\x01\x12\x07\n\x03PUT\x10\x02\x12\n\n\x06\x44\x45LETE\x10\x03\x62\x06proto3')
+  serialized_pb=_b('\n\x11in_sdk_body.proto\x12\x0binsider.sdk\x1a\x16in_sdk_body_user.proto\"\x18\n\x07\x43ontent\x12\r\n\x05magic\x18\x01 \x01(\x03\"\x99\x01\n\x04\x42ody\x12\x31\n\x0cuser_session\x18\x01 \x01(\x0b\x32\x1b.insider.sdk.UserSessionMsg\x12\x0b\n\x03url\x18\x02 \x01(\t\x12*\n\x06method\x18\x03 \x01(\x0e\x32\x1a.insider.sdk.OperationType\x12%\n\x07\x63ontent\x18\x05 \x01(\x0b\x32\x14.insider.sdk.Content*D\n\rOperationType\x12\x0b\n\x07INVALID\x10\x00\x12\x07\n\x03GET\x10\x01\x12\x08\n\x04POST\x10\x02\x12\x07\n\x03PUT\x10\x04\x12\n\n\x06\x44\x45LETE\x10\x08\x62\x06proto3')
   ,
   dependencies=[in__sdk__body__user__pb2.DESCRIPTOR,])
 
@@ -33,34 +33,39 @@ _OPERATIONTYPE = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='GET', index=0, number=0,
+      name='INVALID', index=0, number=0,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='POST', index=1, number=1,
+      name='GET', index=1, number=1,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='PUT', index=2, number=2,
+      name='POST', index=2, number=2,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='DELETE', index=3, number=3,
+      name='PUT', index=3, number=4,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DELETE', index=4, number=8,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=240,
-  serialized_end=295,
+  serialized_end=308,
 )
 _sym_db.RegisterEnumDescriptor(_OPERATIONTYPE)
 
 OperationType = enum_type_wrapper.EnumTypeWrapper(_OPERATIONTYPE)
-GET = 0
-POST = 1
-PUT = 2
-DELETE = 3
+INVALID = 0
+GET = 1
+POST = 2
+PUT = 4
+DELETE = 8
 
 
 
