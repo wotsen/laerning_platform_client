@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='insider.sdk',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x16in_sdk_body_user.proto\x12\x0binsider.sdk\"\x83\x01\n\x0cUserBaseInfo\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x11\n\tuser_pass\x18\x02 \x01(\t\x12/\n\npermission\x18\x03 \x01(\x0e\x32\x1b.insider.sdk.UserPermissson\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\"e\n\x0bUserAllInfo\x12\x31\n\x0euser_base_info\x18\x01 \x01(\x0b\x32\x19.insider.sdk.UserBaseInfo\x12\x14\n\x0cin_blacklist\x18\x02 \x01(\x08\x12\r\n\x05valid\x18\x03 \x01(\x08\"7\n\x08UserList\x12+\n\tuser_info\x18\x01 \x03(\x0b\x32\x18.insider.sdk.UserAllInfo\"\xdc\x01\n\x0eUserSessionMsg\x12\x39\n\tuser_type\x18\x01 \x01(\x0e\x32&.insider.sdk.UserSessionMsg.UserMethod\x12\'\n\x04user\x18\x02 \x01(\x0b\x32\x19.insider.sdk.UserBaseInfo\x12\r\n\x05token\x18\x03 \x01(\t\x12\x12\n\nalive_time\x18\x04 \x01(\x04\"C\n\nUserMethod\x12\x0b\n\x07U_LOGIN\x10\x00\x12\x0c\n\x08U_LOGOUT\x10\x01\x12\n\n\x06U_VERI\x10\x02\x12\x0e\n\nU_REGISTER\x10\x03*\\\n\x0eUserPermissson\x12\x16\n\x12U_PERMISSION_ADMIN\x10\x00\x12\x19\n\x15U_PERMISSION_ADVANCED\x10\x01\x12\x17\n\x13U_PERMOSSION_NORMAL\x10\x02\x62\x06proto3')
+  serialized_pb=_b('\n\x16in_sdk_body_user.proto\x12\x0binsider.sdk\"\x83\x01\n\x0cUserBaseInfo\x12\x11\n\tuser_name\x18\x01 \x01(\t\x12\x11\n\tuser_pass\x18\x02 \x01(\t\x12/\n\npermission\x18\x03 \x01(\x0e\x32\x1b.insider.sdk.UserPermissson\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\r\n\x05phone\x18\x05 \x01(\t\"e\n\x0bUserAllInfo\x12\x31\n\x0euser_base_info\x18\x01 \x01(\x0b\x32\x19.insider.sdk.UserBaseInfo\x12\x14\n\x0cin_blacklist\x18\x02 \x01(\x08\x12\r\n\x05valid\x18\x03 \x01(\x08\"7\n\x08UserList\x12+\n\tuser_info\x18\x01 \x03(\x0b\x32\x18.insider.sdk.UserAllInfo\"\xdc\x01\n\x0eUserSessionMsg\x12\x39\n\tuser_type\x18\x01 \x01(\x0e\x32&.insider.sdk.UserSessionMsg.UserMethod\x12\'\n\x04user\x18\x02 \x01(\x0b\x32\x19.insider.sdk.UserBaseInfo\x12\r\n\x05token\x18\x03 \x01(\t\x12\x12\n\nalive_time\x18\x04 \x01(\x04\"C\n\nUserMethod\x12\x0b\n\x07U_LOGIN\x10\x00\x12\x0c\n\x08U_LOGOUT\x10\x01\x12\n\n\x06U_VERI\x10\x02\x12\x0e\n\nU_REGISTER\x10\x03*v\n\x0eUserPermissson\x12\x18\n\x14U_PERMISSION_INVALID\x10\x00\x12\x16\n\x12U_PERMISSION_ADMIN\x10\x01\x12\x19\n\x15U_PERMISSION_ADVANCED\x10\x02\x12\x17\n\x13U_PERMOSSION_NORMAL\x10\x03\x62\x06proto3')
 )
 
 _USERPERMISSSON = _descriptor.EnumDescriptor(
@@ -31,29 +31,34 @@ _USERPERMISSSON = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='U_PERMISSION_ADMIN', index=0, number=0,
+      name='U_PERMISSION_INVALID', index=0, number=0,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='U_PERMISSION_ADVANCED', index=1, number=1,
+      name='U_PERMISSION_ADMIN', index=1, number=1,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='U_PERMOSSION_NORMAL', index=2, number=2,
+      name='U_PERMISSION_ADVANCED', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='U_PERMOSSION_NORMAL', index=3, number=3,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=556,
-  serialized_end=648,
+  serialized_end=674,
 )
 _sym_db.RegisterEnumDescriptor(_USERPERMISSSON)
 
 UserPermissson = enum_type_wrapper.EnumTypeWrapper(_USERPERMISSSON)
-U_PERMISSION_ADMIN = 0
-U_PERMISSION_ADVANCED = 1
-U_PERMOSSION_NORMAL = 2
+U_PERMISSION_INVALID = 0
+U_PERMISSION_ADMIN = 1
+U_PERMISSION_ADVANCED = 2
+U_PERMOSSION_NORMAL = 3
 
 
 _USERSESSIONMSG_USERMETHOD = _descriptor.EnumDescriptor(
