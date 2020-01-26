@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='insider.sdk',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13in_sdk_header.proto\x12\x0binsider.sdk\"L\n\x04Host\x12*\n\nip_version\x18\x01 \x01(\x0e\x32\x16.insider.sdk.IpVersion\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\n\n\x02ip\x18\x03 \x01(\t\"-\n\x08\x44\x61taTime\x12\x0f\n\x07in_time\x18\x01 \x01(\x03\x12\x10\n\x08out_time\x18\x02 \x01(\x03\"\xb6\x02\n\x06Header\x12(\n\tmsg_magic\x18\x01 \x01(\x0e\x32\x15.insider.sdk.SdkMagic\x12(\n\x07version\x18\x02 \x01(\x0e\x32\x17.insider.sdk.SdkVersion\x12\x0f\n\x07pack_id\x18\x03 \x01(\x03\x12#\n\x04time\x18\x04 \x01(\x0b\x32\x15.insider.sdk.DataTime\x12\'\n\x08\x64\x61ta_dir\x18\x05 \x01(\x0e\x32\x15.insider.sdk.DataFlow\x12\x1f\n\x04host\x18\x06 \x01(\x0b\x32\x11.insider.sdk.Host\x12,\n\x0btrans_proto\x18\x07 \x01(\x0e\x32\x17.insider.sdk.TransProto\x12*\n\ndata_proto\x18\x08 \x01(\x0e\x32\x16.insider.sdk.DataProto*\'\n\nTransProto\x12\x07\n\x03\x41RP\x10\x00\x12\x07\n\x03TCP\x10\x01\x12\x07\n\x03UDP\x10\x02*z\n\tDataProto\x12\x10\n\x0c\x44\x41TA_UPGRADE\x10\x00\x12\x17\n\x13\x44\x41TA_PARA_OPERATION\x10\x01\x12\x0e\n\nDATA_ALARM\x10\x02\x12\x13\n\x0f\x44\x41TA_HEART_BEAT\x10\x03\x12\x0b\n\x07\x44\x41TA_AI\x10\x04\x12\x10\n\x0c\x44\x41TA_PICTURE\x10\x05*\x1f\n\tIpVersion\x12\x08\n\x04IPV4\x10\x00\x12\x08\n\x04IPV6\x10\x01*%\n\x08\x44\x61taFlow\x12\x0b\n\x07\x44\x41TA_IN\x10\x00\x12\x0c\n\x08\x44\x41TA_OUT\x10\x01*/\n\x08SdkMagic\x12\x11\n\rSDK_NON_MAGIC\x10\x00\x12\x10\n\tSDK_MAGIC\x10\xef\x9b\xaf\r*9\n\nSdkVersion\x12\x13\n\x0fSDK_NON_VERSION\x10\x00\x12\x16\n\x0fSDK_CUR_VERSION\x10\x86\xaf\xd0\tb\x06proto3')
+  serialized_pb=_b('\n\x13in_sdk_header.proto\x12\x0binsider.sdk\"L\n\x04Host\x12*\n\nip_version\x18\x01 \x01(\x0e\x32\x16.insider.sdk.IpVersion\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\n\n\x02ip\x18\x03 \x01(\t\"-\n\x08\x44\x61taTime\x12\x0f\n\x07in_time\x18\x01 \x01(\x03\x12\x10\n\x08out_time\x18\x02 \x01(\x03\"\xab\x02\n\x06Header\x12(\n\tmsg_magic\x18\x01 \x01(\x0e\x32\x15.insider.sdk.SdkMagic\x12(\n\x07version\x18\x02 \x01(\x0e\x32\x17.insider.sdk.SdkVersion\x12\x0f\n\x07pack_id\x18\x03 \x01(\x03\x12#\n\x04time\x18\x04 \x01(\x0b\x32\x15.insider.sdk.DataTime\x12\'\n\x08\x64\x61ta_dir\x18\x05 \x01(\x0e\x32\x15.insider.sdk.DataFlow\x12\x1f\n\x04host\x18\x06 \x01(\x0b\x32\x11.insider.sdk.Host\x12\x1f\n\x04\x64\x65st\x18\x07 \x01(\x0b\x32\x11.insider.sdk.Host\x12,\n\x0btrans_proto\x18\x08 \x01(\x0e\x32\x17.insider.sdk.TransProto*7\n\nTransProto\x12\x17\n\x13TRANS_PROTO_INVALID\x10\x00\x12\x07\n\x03TCP\x10\x01\x12\x07\n\x03UDP\x10\x02*7\n\tIpVersion\x12\x16\n\x12IP_VERSION_INVALID\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02*%\n\x08\x44\x61taFlow\x12\x0b\n\x07\x44\x41TA_IN\x10\x00\x12\x0c\n\x08\x44\x41TA_OUT\x10\x01*/\n\x08SdkMagic\x12\x11\n\rSDK_NON_MAGIC\x10\x00\x12\x10\n\tSDK_MAGIC\x10\xef\x9b\xaf\r*9\n\nSdkVersion\x12\x13\n\x0fSDK_NON_VERSION\x10\x00\x12\x16\n\x0fSDK_CUR_VERSION\x10\x86\xaf\xd0\tb\x06proto3')
 )
 
 _TRANSPROTO = _descriptor.EnumDescriptor(
@@ -31,7 +31,7 @@ _TRANSPROTO = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='ARP', index=0, number=0,
+      name='TRANS_PROTO_INVALID', index=0, number=0,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
@@ -45,51 +45,12 @@ _TRANSPROTO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=474,
-  serialized_end=513,
+  serialized_start=463,
+  serialized_end=518,
 )
 _sym_db.RegisterEnumDescriptor(_TRANSPROTO)
 
 TransProto = enum_type_wrapper.EnumTypeWrapper(_TRANSPROTO)
-_DATAPROTO = _descriptor.EnumDescriptor(
-  name='DataProto',
-  full_name='insider.sdk.DataProto',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='DATA_UPGRADE', index=0, number=0,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DATA_PARA_OPERATION', index=1, number=1,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DATA_ALARM', index=2, number=2,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DATA_HEART_BEAT', index=3, number=3,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DATA_AI', index=4, number=4,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='DATA_PICTURE', index=5, number=5,
-      serialized_options=None,
-      type=None),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=515,
-  serialized_end=637,
-)
-_sym_db.RegisterEnumDescriptor(_DATAPROTO)
-
-DataProto = enum_type_wrapper.EnumTypeWrapper(_DATAPROTO)
 _IPVERSION = _descriptor.EnumDescriptor(
   name='IpVersion',
   full_name='insider.sdk.IpVersion',
@@ -97,18 +58,22 @@ _IPVERSION = _descriptor.EnumDescriptor(
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='IPV4', index=0, number=0,
+      name='IP_VERSION_INVALID', index=0, number=0,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='IPV6', index=1, number=1,
+      name='IPV4', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='IPV6', index=2, number=2,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=639,
-  serialized_end=670,
+  serialized_start=520,
+  serialized_end=575,
 )
 _sym_db.RegisterEnumDescriptor(_IPVERSION)
 
@@ -130,8 +95,8 @@ _DATAFLOW = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=672,
-  serialized_end=709,
+  serialized_start=577,
+  serialized_end=614,
 )
 _sym_db.RegisterEnumDescriptor(_DATAFLOW)
 
@@ -153,8 +118,8 @@ _SDKMAGIC = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=711,
-  serialized_end=758,
+  serialized_start=616,
+  serialized_end=663,
 )
 _sym_db.RegisterEnumDescriptor(_SDKMAGIC)
 
@@ -176,23 +141,18 @@ _SDKVERSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=760,
-  serialized_end=817,
+  serialized_start=665,
+  serialized_end=722,
 )
 _sym_db.RegisterEnumDescriptor(_SDKVERSION)
 
 SdkVersion = enum_type_wrapper.EnumTypeWrapper(_SDKVERSION)
-ARP = 0
+TRANS_PROTO_INVALID = 0
 TCP = 1
 UDP = 2
-DATA_UPGRADE = 0
-DATA_PARA_OPERATION = 1
-DATA_ALARM = 2
-DATA_HEART_BEAT = 3
-DATA_AI = 4
-DATA_PICTURE = 5
-IPV4 = 0
-IPV6 = 1
+IP_VERSION_INVALID = 0
+IPV4 = 1
+IPV6 = 2
 DATA_IN = 0
 DATA_OUT = 1
 SDK_NON_MAGIC = 0
@@ -335,14 +295,14 @@ _HEADER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='trans_proto', full_name='insider.sdk.Header.trans_proto', index=6,
-      number=7, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
+      name='dest', full_name='insider.sdk.Header.dest', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='data_proto', full_name='insider.sdk.Header.data_proto', index=7,
+      name='trans_proto', full_name='insider.sdk.Header.trans_proto', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -361,7 +321,7 @@ _HEADER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=162,
-  serialized_end=472,
+  serialized_end=461,
 )
 
 _HOST.fields_by_name['ip_version'].enum_type = _IPVERSION
@@ -370,13 +330,12 @@ _HEADER.fields_by_name['version'].enum_type = _SDKVERSION
 _HEADER.fields_by_name['time'].message_type = _DATATIME
 _HEADER.fields_by_name['data_dir'].enum_type = _DATAFLOW
 _HEADER.fields_by_name['host'].message_type = _HOST
+_HEADER.fields_by_name['dest'].message_type = _HOST
 _HEADER.fields_by_name['trans_proto'].enum_type = _TRANSPROTO
-_HEADER.fields_by_name['data_proto'].enum_type = _DATAPROTO
 DESCRIPTOR.message_types_by_name['Host'] = _HOST
 DESCRIPTOR.message_types_by_name['DataTime'] = _DATATIME
 DESCRIPTOR.message_types_by_name['Header'] = _HEADER
 DESCRIPTOR.enum_types_by_name['TransProto'] = _TRANSPROTO
-DESCRIPTOR.enum_types_by_name['DataProto'] = _DATAPROTO
 DESCRIPTOR.enum_types_by_name['IpVersion'] = _IPVERSION
 DESCRIPTOR.enum_types_by_name['DataFlow'] = _DATAFLOW
 DESCRIPTOR.enum_types_by_name['SdkMagic'] = _SDKMAGIC

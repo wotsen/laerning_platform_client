@@ -15,6 +15,7 @@ _sym_db = _symbol_database.Default()
 
 
 import in_sdk_body_user_pb2 as in__sdk__body__user__pb2
+import in_sdk_body_appmodule_pb2 as in__sdk__body__appmodule__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='insider.sdk',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11in_sdk_body.proto\x12\x0binsider.sdk\x1a\x16in_sdk_body_user.proto\"\x18\n\x07\x43ontent\x12\r\n\x05magic\x18\x01 \x01(\x03\"\x99\x01\n\x04\x42ody\x12\x31\n\x0cuser_session\x18\x01 \x01(\x0b\x32\x1b.insider.sdk.UserSessionMsg\x12\x0b\n\x03url\x18\x02 \x01(\t\x12*\n\x06method\x18\x03 \x01(\x0e\x32\x1a.insider.sdk.OperationType\x12%\n\x07\x63ontent\x18\x05 \x01(\x0b\x32\x14.insider.sdk.Content*D\n\rOperationType\x12\x0b\n\x07INVALID\x10\x00\x12\x07\n\x03GET\x10\x01\x12\x08\n\x04POST\x10\x02\x12\x07\n\x03PUT\x10\x04\x12\n\n\x06\x44\x45LETE\x10\x08\x62\x06proto3')
+  serialized_pb=_b('\n\x11in_sdk_body.proto\x12\x0binsider.sdk\x1a\x16in_sdk_body_user.proto\x1a\x1bin_sdk_body_appmodule.proto\"\x93\x01\n\x07\x43ontent\x12\r\n\x05magic\x18\x01 \x01(\x03\x12=\n\x0f\x61pp_module_list\x18\x02 \x01(\x0b\x32\".insider.sdk.AppModuleCoutInfoListH\x00\x12*\n\tuser_list\x18\x03 \x01(\x0b\x32\x15.insider.sdk.UserListH\x00\x42\x0e\n\x0c\x43ontentOneof\"\x99\x01\n\x04\x42ody\x12\x31\n\x0cuser_session\x18\x01 \x01(\x0b\x32\x1b.insider.sdk.UserSessionMsg\x12\x0b\n\x03url\x18\x02 \x01(\t\x12*\n\x06method\x18\x03 \x01(\x0e\x32\x1a.insider.sdk.OperationType\x12%\n\x07\x63ontent\x18\x05 \x01(\x0b\x32\x14.insider.sdk.Content*D\n\rOperationType\x12\x0b\n\x07INVALID\x10\x00\x12\x07\n\x03GET\x10\x01\x12\x08\n\x04POST\x10\x02\x12\x07\n\x03PUT\x10\x04\x12\n\n\x06\x44\x45LETE\x10\x08\x62\x06proto3')
   ,
-  dependencies=[in__sdk__body__user__pb2.DESCRIPTOR,])
+  dependencies=[in__sdk__body__user__pb2.DESCRIPTOR,in__sdk__body__appmodule__pb2.DESCRIPTOR,])
 
 _OPERATIONTYPE = _descriptor.EnumDescriptor(
   name='OperationType',
@@ -55,8 +56,8 @@ _OPERATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=240,
-  serialized_end=308,
+  serialized_start=393,
+  serialized_end=461,
 )
 _sym_db.RegisterEnumDescriptor(_OPERATIONTYPE)
 
@@ -83,6 +84,20 @@ _CONTENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='app_module_list', full_name='insider.sdk.Content.app_module_list', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='user_list', full_name='insider.sdk.Content.user_list', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -94,9 +109,12 @@ _CONTENT = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
+    _descriptor.OneofDescriptor(
+      name='ContentOneof', full_name='insider.sdk.Content.ContentOneof',
+      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=58,
-  serialized_end=82,
+  serialized_start=88,
+  serialized_end=235,
 )
 
 
@@ -147,10 +165,18 @@ _BODY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=85,
-  serialized_end=238,
+  serialized_start=238,
+  serialized_end=391,
 )
 
+_CONTENT.fields_by_name['app_module_list'].message_type = in__sdk__body__appmodule__pb2._APPMODULECOUTINFOLIST
+_CONTENT.fields_by_name['user_list'].message_type = in__sdk__body__user__pb2._USERLIST
+_CONTENT.oneofs_by_name['ContentOneof'].fields.append(
+  _CONTENT.fields_by_name['app_module_list'])
+_CONTENT.fields_by_name['app_module_list'].containing_oneof = _CONTENT.oneofs_by_name['ContentOneof']
+_CONTENT.oneofs_by_name['ContentOneof'].fields.append(
+  _CONTENT.fields_by_name['user_list'])
+_CONTENT.fields_by_name['user_list'].containing_oneof = _CONTENT.oneofs_by_name['ContentOneof']
 _BODY.fields_by_name['user_session'].message_type = in__sdk__body__user__pb2._USERSESSIONMSG
 _BODY.fields_by_name['method'].enum_type = _OPERATIONTYPE
 _BODY.fields_by_name['content'].message_type = _CONTENT
