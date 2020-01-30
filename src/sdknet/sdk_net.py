@@ -11,6 +11,7 @@ class SdkTcpProtocol(Protocol):
         pass
 
     def connectionMade(self):
+        print("connect");
         self.transport.write(b'hello server')
 
     def dataReceived(self, data):
@@ -62,5 +63,5 @@ def sdk_tcp_connet(port, host="0.0.0.0"):
 
 
 if __name__ == "__main__":
-    sdk_tcp_connet(8000)
+    sdk_tcp_connet(9001)
     reactor.run()

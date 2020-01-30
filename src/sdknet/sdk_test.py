@@ -11,10 +11,12 @@ class SdkTcpProtocol(Protocol):
         pass
 
     def connectionMade(self):
-        print("client connect")
+        print("send client connect")
+        self.transport.write("client connect")
 
     def dataReceived(self, data):
-        self.transport.write(data)
+        # self.transport.write(data)
+        print("recv ", data)
 
     def connectionLost(self, reason=None):
         pass
@@ -35,5 +37,5 @@ def sdk_tcp_connet(port, host="0.0.0.0"):
 
 
 if __name__ == "__main__":
-    sdk_tcp_connet(8000)
+    sdk_tcp_connet(9001)
     reactor.run()
