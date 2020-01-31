@@ -2,6 +2,13 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import platform
+
+if platform.system() == "Windows":
+    # 解决windows任务栏的图标问题
+    import ctypes
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("myappid")
+
 from PyQt5.QtWidgets import QApplication
 import qt5reactor
 

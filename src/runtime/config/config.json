@@ -1,0 +1,14 @@
+{
+  "network": {
+    "sdk-net": {
+      "cur-trans-proto": "tcp",
+      "ip-version": "ipv4",
+      "srv-ip": "127.0.0.1",
+      "ip": "127.0.0.1",
+      "srv-tcp-port": 9001,
+      "srv-udp-port": 9001,
+      "tcp-port": 9009,
+      "udp-port": 9003
+    }
+  }
+}
