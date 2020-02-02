@@ -5,7 +5,7 @@ import sys
 
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from PyQt5.QtGui import QIcon, QFont
-from . login import Ui_MainWindow
+from login import Ui_MainWindow
 
 
 class MainPage(QMainWindow, Ui_MainWindow):
@@ -16,22 +16,24 @@ class MainPage(QMainWindow, Ui_MainWindow):
 
     def initUi(self):
         self.setWindowTitle('platform')
-        self.setWindowIcon(QIcon('resource/icon.jpg'))
+        self.setWindowIcon(QIcon('ui/resource/icon.jpg'))
 
 
-_Ui = None
+# _Ui = None
 
 
 def UiInit():
-    global _Ui
-    if not _Ui:
-        _Ui = MainPage()
-        _Ui.show()
+    # global _Ui
+    # if not _Ui:
+    _Ui = MainPage()
+    _Ui.show()
+
+    return _Ui
 
 
 if "__main__" == __name__:
     app = QApplication(sys.argv)
-    UiInit()
+    ui = UiInit()
     # _Ui = MainPage()
     # _Ui.show()
     sys.exit(app.exec_())

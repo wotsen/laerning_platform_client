@@ -8,13 +8,13 @@
 import json
 import sys
 
-sys.path.append("sdknet/sdk_protocol")
+sys.path.append("sdk_network/sdk_protocol")
 
 import in_sdk_header_pb2 as SdkHeader
 
 _base_config = None
 # 正式使用路径为: runtime/config/config.json
-with open("../runtime/config/config.json", "r+", encoding="utf8") as f:
+with open("runtime/config/config.json", "r+", encoding="utf8") as f:
     try:
         _base_config = json.load(f)
     except Exception as e:

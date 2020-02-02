@@ -2,12 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import platform
+# import platform
 
-if platform.system() == "Windows":
-    # 解决windows任务栏的图标问题
-    import ctypes
-    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("myappid")
+# if platform.system() == "Windows":
+#     # 解决windows任务栏的图标问题
+#     import ctypes
+#
+#     ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("my-app-id")
+
+import src_packages_path
 
 from PyQt5.QtWidgets import QApplication
 import qt5reactor
@@ -20,7 +23,11 @@ from twisted.python import log
 from twisted.internet import reactor
 from twisted.internet import defer
 
-from ui.mainpage import UiInit
+# sys.path.append("ui")
+# from mainpage import UiInit
+
+from ui.login_page import LoginPage
+from sdk_net import sdk_tcp_connect
 
 
 def mainTaskLoop():
@@ -40,7 +47,11 @@ if "__main__" == __name__:
     print("platform start.........................")
 
     # 初始化UI
-    UiInit()
+    # ui = UiInit()
+    login = LoginPage()
+    login.show()
+
+    sdk_tcp_connect()
 
     # 主任务(空转)
     reactor.callWhenRunning(mainTaskLoop)

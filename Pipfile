@@ -1,0 +1,14 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+pyqt5 = "*"
+twisted = "*"
+qt5reactor = "*"
+
+[requires]
+python_version = "3.7"
